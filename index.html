@@ -580,7 +580,8 @@ async function loadData() {
 
 /* ─── CSV PARSER ─── */
 function parseCSV(txt) {
-  const lines = txt.trim().split(/?
+  const lines = txt.trim().split(/
+?
 /);
   if (lines.length < 2) return [];
   const hdrs = splitLine(lines[0]).map(h => h.toLowerCase().trim().replace(/^"|"$/g,''));
