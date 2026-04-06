@@ -323,7 +323,7 @@ var C={
 
 /* ── URLS ── */
 // Se você configurou o Google Apps Script, cole a URL aqui:
-var GAS_URL = '';  // ex: 'https://script.google.com/macros/s/AKfy.../exec'
+var GAS_URL = 'https://script.google.com/macros/s/AKfycbzMoTjMDCiZU41bCpgCB17QUuCiYCX7gPUM88PW-2Qrf07AaycJVBebNYwJaItVDaDPBA/exec';  // ex: 'https://script.google.com/macros/s/AKfy.../exec'
 
 // CSV direto (fallback)
 var CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT8v5KfactILCEG4x7i1WUrBCsJrbqGiZqB8ExUCUxUfBHKPsInysmcOuTlkYBMsg/pub?gid=1142053990&single=true&output=csv';
@@ -444,7 +444,8 @@ function normalizeRows(rows){
 
 /* ── CSV PARSER ── */
 function pcsv(txt){
-  var ls=txt.trim().split(/?
+  var ls=txt.trim().split(/
+?
 /);
   if(ls.length<2)return[];
   var h=spl(ls[0]).map(x=>x.toLowerCase().trim().replace(/^"|"$/g,'').replace(/﻿/g,''));
